@@ -1,3 +1,8 @@
+
+[v0.0.2](https://github.com/littleflute/pro-javascript-design-patterns/edit/master/README.md)
+
+[]
+
 # Apress Source Code
 
 This repository accompanies [*Pro JavaScript Design Patterns*](http://www.apress.com/9781590599082) by Dustin Diaz and Ross Harmes (Apress, 2008).
