@@ -2,9 +2,15 @@
 <html>
 <body>
  
-<button onclick="https://github.com/littleflute/pro-javascript-design-patterns/edit/master/cnbook/index.html">v0.0.2</button>
+<button onclick="https://github.com/littleflute/pro-javascript-design-patterns/edit/master/cnbook/index.html">v0.0.3</button>
 <button onclick="myFunction(1)">+</button>
-<button onclick="myFunction(-1)">-</button>
+<button onclick="myFunction(-1)">-</button>	
+<button onclick="myFunction(10)">+10</button>
+<button onclick="myFunction(-10)">-10</button>
+<button onclick="myFunction(50)">+50</button>
+<button onclick="myFunction(-50)">-50</button>
+<button onclick="myFunction(100)">+100</button>
+<button onclick="myFunction(-100)">-100</button>
 <br><br>
 <div id = "dbg"></div>
 <img id="xdImg" src="https://raw.githubusercontent.com/littleflute/pro-javascript-design-patterns/master/cnbook/0001.jpg">
@@ -14,10 +20,18 @@ var srcBase = "https://raw.githubusercontent.com/littleflute/pro-javascript-desi
 var pageID = 1;
 
 function xdNum2Str(n) {
-	var s = "";
-	if(n>=0 && n<=9)
+    var s = "";
+    if(n>=0 && n<=9)
     {
     	s = "000" + n.toString() + ".jpg";
+    }
+    else if(n>=10 && n<=99)
+    {
+    	s = "00" + n.toString() + ".jpg";
+    }
+    else if(n>=100 && n<=999)
+    {
+    	s = "0" + n.toString() + ".jpg";
     }
     return s;
 }
