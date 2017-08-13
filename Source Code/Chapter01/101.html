@@ -6,13 +6,115 @@
 <body>
 
 <div id="blVer">
-<a href = "https://littleflute.github.io/blog/html/tools/blp/" target = "_blank">home</a>-
-<a href = "https://github.com/littleflute/blog/new/master/html/tools/blp" target = "_blank">new</a>-
-<a href = "https://github.com/littleflute/blog/issues/229" target="_blank">log</a> - v1.1.6
-:#: blTest
+<a href = "../.." target = "_blank">SourceCode Home</a>-
+<a href = "https://github.com/littleflute/pro-javascript-design-patterns/edit/master/Source%20Code/Chapter01/101.html" >v0.0.2</a>-
+<a href = "https://github.com/littleflute/blog/issues/229" target="_blank">log</a> 
 
 <span id = "blDbg"></span>
 </div>
+<textarea id = "101-1" style = "display:none;">
+/* Start and stop animations using functions. */
+function startAnimation() {
+  alert("startAnimation");
+}
+function stopAnimation() {
+  alert("startAnimation");
+}
+startAnimation();
+</textarea> 
+
+<textarea id = "101-2" style = "display:none;">
+/* Anim class. */
+var Anim = function() {
+  alert("Anim = function()");
+};
+Anim.prototype.start = function() {
+  alert("Anim.prototype.start = function()");
+};
+Anim.prototype.stop = function() {
+  alert("Anim.prototype.stop = function()");
+};
+
+/* Usage. */
+var myAnim = new Anim();
+myAnim.start();
+//...
+myAnim.stop();
+</textarea> 
+
+<textarea id = "101-3" style = "display:none;">
+/* Anim class, with a slightly different syntax for declaring methods. */
+var Anim = function() { 
+  alert("Anim = function()");
+};
+Anim.prototype = {
+  start: function() {
+    alert("Anim.prototype.start = function()");
+  },
+  stop: function() {
+    alert("Anim.prototype.stop = function()");
+  }
+};
+
+/* Usage. */
+var myAnim = new Anim();
+myAnim.start();
+//...
+myAnim.stop();
+</textarea> 
+
+<textarea id = "101-4" style = "display:none;">
+/* Add a method to the Function class that can be used to declare methods. */
+Function.prototype.method = function(name, fn) {
+  this.prototype[name] = fn;
+};
+
+/* Anim class, with methods created using a convenience method. */
+var Anim = function() { 
+  alert("Anim = function()");
+};
+Anim.method('start', function() {
+  alert("Anim.prototype.start = function()");
+});
+Anim.method('stop', function() {
+  alert("Anim.prototype.stop = function()");
+});
+
+
+/* Usage. */
+var myAnim = new Anim();
+myAnim.start();
+//...
+myAnim.stop();
+</textarea> 
+
+<textarea id = "101-5" style = "display:none;">
+/* This version allows the calls to be chained. */
+Function.prototype.method = function(name, fn) {
+    this.prototype[name] = fn;
+    return this;
+};
+
+/* Anim class, with methods created using a convenience method and chaining. */
+
+var Anim = function() { 
+  alert("Anim = function()");
+};
+Anim.
+  method('start', function() {
+    alert("Anim.prototype.start = function()");
+  }).
+  method('stop', function() {
+    alert("Anim.prototype.stop = function()");
+  });
+
+
+/* Usage. */
+var myAnim = new Anim();
+myAnim.start();
+//...
+myAnim.stop();
+</textarea> 
 
 <textarea id = "101-All" style="display:none;">
 /* Start and stop animations using functions. */
