@@ -10,50 +10,51 @@
 <a href = "../..">Home</a>-
 <a href = "..">SourceCode</a>-
 <a href = ".">Chapter01</a>-
-<a href = "https://github.com/littleflute/pro-javascript-design-patterns/edit/master/Source%20Code/Chapter01/103.html" >103.htmlv0.0.1</a>-
-<a href = "https://github.com/littleflute/blog/issues/640" target="_blank">log</a> 
+<a href = "https://github.com/littleflute/pro-javascript-design-patterns/edit/master/Source%20Code/Chapter01/102.html" >102.htmlv0.0.5</a>-
+<a href = "https://github.com/littleflute/blog/issues/639" target="_blank">log</a> 
 
 <span id = "blDbg"></span>
 </div> 
 <textarea id = "102-All" style="display:none;"> 
-function displayError(message) {
-  displayError.numTimesExecuted++;
-  alert(message);
-};
-displayError.numTimesExecuted = 0;
+/* An anonymous function, executed immediately. */
+
+(function() {
+  var foo = 10;
+  var bar = 2;
+  alert(foo * bar);
+})();
 
 
-/* Class Person. */
+/* An anonymous function with arguments. */
 
-function Person(name, age) {
-  this.name = name;
-  this.age = age;
-}
-Person.prototype = {
-  getName: function() {
-    return this.name;
-  },
-  getAge: function() {
-    return this.age;
-  }
-}
+(function(foo, bar) {
+  alert(foo * bar);
+})(10, 2);
 
-/* Instantiate the class. */
 
-var alice = new Person('Alice', 93);
-var bill = new Person('Bill', 30);
+/* An anonymous function that returns a value. */
 
-/* Modify the class. */
+var baz = (function(foo, bar) {
+  return foo * bar;
+})(10, 2);
 
-Person.prototype.getGreeting = function() {
-  return 'Hi ' + this.getName() + '!';
-};
+// baz will equal 20.
 
-/* Modify a specific instance. */
 
-alice.displayGreeting = function() {
-  alert(this.getGreeting());
-}
+/* An anonymous function used as a closure. */
+
+var baz;
+
+(function() {
+  var foo = 10;
+  var bar = 2;
+  baz = function() { 
+    return foo * bar; 
+  };
+})();
+
+baz(); // baz can access foo and bar, even though is it executed outside of the
+       // anonymous function.
 </textarea> 
 
 <textarea id = "blDiv" style = "display:none;">
