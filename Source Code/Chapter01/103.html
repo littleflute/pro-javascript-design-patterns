@@ -10,13 +10,50 @@
 <a href = "../..">Home</a>-
 <a href = "..">SourceCode</a>-
 <a href = ".">Chapter01</a>-
-<a href = "https://github.com/littleflute/pro-javascript-design-patterns/edit/master/Source%20Code/Chapter01/103.html" >103.htmlv0.0.1</a>-
-<a href = "https://github.com/littleflute/blog/issues/638" target="_blank">log</a> 
+<a href = "https://github.com/littleflute/pro-javascript-design-patterns/edit/master/Source%20Code/Chapter01/103.html" >103.htmlv0.0.2</a>-
+<a href = "https://github.com/littleflute/blog/issues/640" target="_blank">log</a> 
 
 <span id = "blDbg"></span>
 </div>  
 <textarea id = "103-All" style="display:none;">
-   
+function displayError(message) {
+  displayError.numTimesExecuted++;
+  alert(message);
+};
+displayError.numTimesExecuted = 0;
+
+
+/* Class Person. */
+
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+Person.prototype = {
+  getName: function() {
+    return this.name;
+  },
+  getAge: function() {
+    return this.age;
+  }
+}
+
+/* Instantiate the class. */
+
+var alice = new Person('Alice', 93);
+var bill = new Person('Bill', 30);
+
+/* Modify the class. */
+
+Person.prototype.getGreeting = function() {
+  return 'Hi ' + this.getName() + '!';
+};
+
+/* Modify a specific instance. */
+
+alice.displayGreeting = function() {
+  alert(this.getGreeting());
+}   
 </textarea> 
 
 <textarea id = "blDiv" style = "display:none;">
